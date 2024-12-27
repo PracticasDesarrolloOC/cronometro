@@ -42,5 +42,5 @@ const Cronometro = () => {
     )
 }
 
-export default Cronometro;
+export default Cronometro
 
