@@ -1,46 +1,45 @@
-import { useState, useEffect } from 'react';
-
-const Cronometro = () => {
-    const [tiempo, setTiempo] = useState(0)
-    const [enEjecucion, setEnEjecucion] = useState(false)
-
-    const iniciarCronometro = () => {
-        setEnEjecucion(true)
-    }
-
-    const pausarCronometro = () => {
-        setEnEjecucion(false)
-    }
-
-    const reiniciarCronometro = () => {
-        setEnEjecucion(false)
-        setTiempo(0)
-    }
+import { useState, useEffect } from "react"
+import "./styles.css"
+const Chronometer = () => {
+        const [time, setTime] = useState(0)
+        const [isRunning, setisRunning] = useState(false)
+    
+        const startChronometer = () => {
+            setisRunning(true)
+        }
+    
+        const pauseChronometer = () => {
+            setisRunning(false)
+        }
+    
+        const restartChronometer = () => {
+            setisRunning(false)
+            setTime(0)
+        }
 
     useEffect(() => {
-        let intervalo = null
-        if (enEjecucion) {
-            intervalo = setInterval(() => {
-                setTiempo((prevTiempo) => prevTiempo + 1)
+        let interval = null
+        if (isRunning) {
+            interval = setInterval(() => {
+                setTime((prevTime) => prevTime + 1)
             }, 1000)
-        } else if (!enEjecucion && tiempo !== 0) {
-            clearInterval(intervalo);
+        } else if (!isRunning && time !== 0) {
+            clearInterval(interval)
         }
-        return () => clearInterval(intervalo)
-    }, [enEjecucion, tiempo])
+        return () => clearInterval(interval)
+    }, [isRunning, time])
 
     return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>Cronómetro</h1>
-            <h2>{String(Math.floor(tiempo / 60)).padStart(2, '0')}:{String(tiempo % 60).padStart(2, '0')}</h2>
+        <div className="conteiner">
+            <h1 className="title">Crónometro</h1>
+            <h2>{String(Math.floor(time / 60)).padStart(2, '0')}:{String(time % 60).padStart(2, '0')}</h2>
             <div>
-                <button onClick={iniciarCronometro} disabled={enEjecucion}>Iniciar</button>
-                <button onClick={pausarCronometro} disabled={!enEjecucion}>Pausar</button>
-                <button onClick={reiniciarCronometro}>Reiniciar</button>
+                <button onClick={startChronometer} disabled={isRunning}>Iniciar</button>
+                <button onClick={pauseChronometer} disabled={!isRunning}>Pausar</button>
+                <button onClick={restartChronometer}>Reiniciar</button>
             </div>
         </div>
     )
 }
 
-export default Cronometro
-
+export default Chronometer 

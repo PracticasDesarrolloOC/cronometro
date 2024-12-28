@@ -1,0 +1,39 @@
+.conteiner {
+    text-align: center; 
+    margin-top: 100px; 
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 48px; 
+    color: #333; 
+}
+
+h2 {
+    font-family: 'Courier New', monospace; 
+    font-size: 72px; 
+    color: #000; 
+    margin-top: 20px; 
+}
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-5px);
+}
+
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
