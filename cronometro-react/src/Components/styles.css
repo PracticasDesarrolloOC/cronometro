@@ -1,36 +1,58 @@
-.conteiner {
-    text-align: center; 
-    margin-top: 100px; 
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/Images/fondito.jpg"); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-h1 {
+.conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #FCFFC1; 
+    width: 1460px; 
+    height: 1460px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+}
+
+.title {
     font-family: 'Arial', sans-serif;
-    font-size: 48px; 
-    color: #333; 
+    font-size: 170px;
+    color: #333;
+    margin: 0;
 }
 
 h2 {
-    font-family: 'Courier New', monospace; 
-    font-size: 72px; 
-    color: #000; 
-    margin-top: 20px; 
+    font-family: 'Courier New', monospace;
+    font-size: 170px; 
+    color: #000;
+    margin: 100px;
 }
 
 button {
-    font-size: 18px;
-    padding: 10px 20px;
-    margin: 10px;
+    font-size: 80px;
+    padding: 35px 50px;
+    margin: 25px;
     cursor: pointer;
     border: none;
-    border-radius: 8px;
-    background-color: #4CAF50;
-    color: white;
-    transition: background-color 0.3s ease, transform 0.3s ease; 
+    border-radius: 60px;
+    background-color: #CDC1FF;
+    color: black;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #45a049;
-    transform: translateY(-5px);
+    background-color: #CDC1FF;
+    transform: translateY(-10px);
 }
 
 button:disabled {

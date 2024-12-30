@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import "./styles.css"
+
 const Chronometer = () => {
         const [time, setTime] = useState(0)
         const [isRunning, setisRunning] = useState(false)
